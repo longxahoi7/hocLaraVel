@@ -63,4 +63,7 @@ return redirect()->route('user.list-user');
  }
 
     }
+    public function test(){
+        return view('admin.products.List-product');
+    }
 }

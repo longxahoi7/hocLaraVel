@@ -10,11 +10,11 @@ class ProController extends Controller
 {
     public function listProducts(Request $request)
     {
-       if(isset($request->btn)){
         $list = DB::table('product')
         ->join('category', 'product.category_id', '=', 'category.id')
-        ->select('product.id','product.name', 'product.price', 'product.view', 'category.nameC')
-        ->where('product.name','like','%'.$request->nhap.'%')
+        ->select('product.id','product.name', 'product.price', 'product.view', 'category.nameC');
+       if(isset($request->btn)){
+        $list = $list::where('product.name','like','%'.$request->nhap.'%')
         ->orderBy('product.view', 'desc')->get();
        }else{
         $list = DB::table('product')

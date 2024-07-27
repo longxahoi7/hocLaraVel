@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Users extends Model
+class OdersDetail extends Model
 {
     use HasFactory;
-    protected $filter=['name', 'email', 'phongban_id','tuoi'];
+    protected $table='oders_detail';
 }
